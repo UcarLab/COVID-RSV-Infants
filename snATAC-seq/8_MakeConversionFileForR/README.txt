@@ -1,0 +1,1 @@
+These files were used to generate the necessary raw inputs to create Seurat objects in R from AnnData objects from python. This was done on both scRNA-seq and snATAC-seq objects for label transfer in Seurat
