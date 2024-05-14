@@ -9,7 +9,9 @@ getFilteredSamples = function(cursamples, cellgroup, mincells=25, filter=TRUE){
   for(cursample in cursamples){
     cursample = gsub("-", "\\.", cursample)
     cursample_cells = cellnumbers[paste0(cursample,"_cells")][cellgroup,]
-    if((filter==FALSE || cursample != 'pHC15') && cursample_cells >= mincells){ #Note: One healthy sample is excluded
+    if((filter==FALSE || cursample != 'pHC15' || cursample != 'pCoV1') && cursample_cells >= mincells){ 
+      #Note: One healthy sample is excluded
+      #One mild/convalescent COVID-19 sample was excluded due to adenovirus infection
       rv = c(rv,  gsub("\\.", "-",  cursample))
     }
   }
